@@ -1,0 +1,20 @@
+<fa-icon [icon]="faPlus" class="mr-5" (click)="openFileOrFolderActions()"></fa-icon>
+<fa-icon [icon]="faTrash" class="mr-5" (click)="deleteFolder()"></fa-icon>
+<div class="folder-action-button-and-text-filed" *ngIf="open">
+  <button (click)="openFolder()" class="ml-15">Folder</button>
+  <button (click)="openFile()" class="ml-5">File</button>
+</div>
+<div class="folder-action-button-and-text-filed mt-5" *ngIf="isAddFolderEnabled">
+  <fa-icon [icon]="faFolderOpen" class="mr-5"></fa-icon>
+  <input type="text" [(ngModel)]="folderName">
+  <fa-icon [icon]="faCheck" class="ml-5 mr-5" *ngIf="folderName.trim().length" (click)="addFolder()"></fa-icon>
+  <!-- <fa-icon [icon]="faTimes" class="ml-5 mr-5"></fa-icon> -->
+</div>
+
+<div class="folder-action-button-and-text-filed  mt-5" *ngIf="isAddFileEnabled">
+  <fa-icon [icon]="faFile" class="mr-5"></fa-icon>
+  <input type="text"  [(ngModel)]="fileName">
+  <fa-icon [icon]="faCheck" class="ml-5 mr-5" *ngIf="fileName.trim().length" (click)="addFile()"></fa-icon>
+  <!-- <fa-icon [icon]="faTimes" class="ml-5 mr-5"></fa-icon> -->
+</div>
+

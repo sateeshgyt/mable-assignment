@@ -1,0 +1,12 @@
+.folder-holder{
+  padding: 5px 5px 5px 0px;
+  border-left: 1px solid #000000;
+}
+.folder-actions {
+  display: none;
+}
+.folder-holder:hover {
+  .folder-actions{
+    display: block;
+  }
+}

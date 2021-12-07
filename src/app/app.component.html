@@ -1,0 +1,43 @@
+<div class="header">
+  <h1>FOLDER STUCTURE</h1>
+</div>
+
+<div class="container">
+  <button (click)="addFolderAtRoot()">
+    Add Folder To Root
+  </button>
+  <ng-template #nodeTemplateRef let-node="node" let-parent="parent">
+
+    <ul style="list-style-type:none;">
+
+     <app-folder [folderData]="node" [parent]="parent" *ngIf="node.type=='folder'"></app-folder>
+     <app-file [fileData]="node" [parent]="parent" *ngIf="node.type=='files'"></app-file>
+
+      <div *ngIf="node.children.length" class="node__children">
+        <ng-template ngFor let-child [ngForOf]="node.children">
+          <!-- Invoke the recursive template. -->
+          <ng-template
+            [ngTemplateOutlet]="nodeTemplateRef"
+            [ngTemplateOutletContext]="{ node: child, parent:  node}"
+          >
+          </ng-template>
+
+        </ng-template>
+
+      </div>
+
+    </ul>
+
+  </ng-template>
+  <!-- Initiate the recursive template rendering. -->
+  <ng-container *ngFor="let nodeElem of nodesList">
+    <ng-template
+    [ngTemplateOutlet]="nodeTemplateRef"
+    [ngTemplateOutletContext]="{ node: nodeElem, parent: nodesList }"
+    >
+  </ng-template>
+  </ng-container>
+
+  <app-add-to-root *ngIf="isRootEnabled"></app-add-to-root>
+</div>
+

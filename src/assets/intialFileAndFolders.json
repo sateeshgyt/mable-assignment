@@ -1,0 +1,15 @@
+{
+  "type": "folder",
+  "name": "images",
+  "children": [
+    {
+      "type": "folder",
+      "name": "images",
+      "children": [
+
+      ],
+      "id": "uniqueid1"
+    }
+  ],
+  "id": "uniqueid1"
+}

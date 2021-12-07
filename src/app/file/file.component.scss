@@ -1,0 +1,13 @@
+.file-holder{
+  display: flex;
+  padding: 5px 5px 5px 0px;
+  border-left: 1px solid #000000;
+}
+.file-delete-icon {
+  display: none;
+}
+.file-holder:hover {
+  .file-delete-icon{
+    display: block;
+  }
+}

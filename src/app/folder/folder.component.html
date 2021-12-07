@@ -1,0 +1,8 @@
+<div class="folder-holder d-flex">
+  -
+  <fa-icon [icon]="faFolderOpen" class="mr-5"></fa-icon>
+  <span>{{folderData.name}}</span>
+  <div class="d-flex folder-actions ml-15">
+    <app-folder-actions [folderDetails]="folderData" [parent]="parent"></app-folder-actions>
+  </div>
+</div>
